@@ -1,32 +1,35 @@
 ```markdown
 ArcheAPI/
-├── src/
-│   ├── config/
-│   │   ├── firebaseConfig.js       # Firebase Admin SDK setup
-│   │   └── winston.js             # Logger configuration
-│   ├── controllers/
-│   │   └── archetypeController.js # Handles archetype endpoints
-│   ├── data/
-│   │   ├── archetypes.json        # Static archetype data
-│   │   └── educational/           # Curated datasets for paid academic use
-│   │       ├── psychology.json
-│   │       └── storytelling.json
-│   ├── middleware/
-│   │   ├── rateLimit.js           # Tiered rate limiting
-│   │   ├── auth.js                # Firebase Authentication
-│   │   ├── apiKey.js              # API key validation
-│   │   └── validation.js          # Input validation
-│   ├── models/
-│   │   └── archetypeModel.js      # Archetype data schema and methods
-│   ├── routes/
-│   │   ├── archetypes.js          # Archetype endpoints (free/premium)
-│   │   └── educational.js         # Educational dataset endpoints
-│   ├── utils/
-│   │   └── helpers.js             # Reusable utilities
-│   ├── functions/
-│   │   └── subscription.js        # Stripe payment functions
-│   └── app.js                     # Express app setup
-├── public/
+├── functions/                     # Firebase Functions source directory
+│   ├── src/                       # Backend logic (API)
+│   │   ├── config/
+│   │   │   ├── firebaseConfig.js  # Firebase Admin SDK setup
+│   │   │   └── winston.js         # Logger configuration
+│   │   ├── controllers/
+│   │   │   └── archetypeController.js # Handles archetype endpoints
+│   │   ├── data/
+│   │   │   ├── archetypes.json    # Static archetype data
+│   │   │   └── educational/       # Curated datasets for paid academic use
+│   │   │       ├── psychology.json
+│   │   │       └── storytelling.json
+│   │   ├── middleware/
+│   │   │   ├── rateLimit.js       # Tiered rate limiting
+│   │   │   ├── auth.js            # Firebase Authentication
+│   │   │   ├── apiKey.js          # API key validation
+│   │   │   └── validation.js      # Input validation
+│   │   ├── models/
+│   │   │   └── archetypeModel.js  # Archetype data schema and methods
+│   │   ├── routes/
+│   │   │   ├── archetypes.js      # Archetype endpoints (free/premium)
+│   │   │   └── educational.js     # Educational dataset endpoints
+│   │   ├── utils/
+│   │   │   └── helpers.js         # Reusable utilities
+│   │   └── app.js                 # Express app setup
+│   ├── subscription.js            # Stripe payment functions
+│   ├── package.json               # Dependencies for Functions (moved here)
+│   ├── node_modules/              # Dependencies for Functions
+│   └── .eslintrc.js               # Linting rules for Functions
+├── public/                        # Firebase Hosting directory
 │   ├── frontend/                  # User onboarding (signup, subscriptions)
 │   │   └── index.html
 │   ├── swagger-ui/                # Swagger UI static files
@@ -44,7 +47,7 @@ ArcheAPI/
 ├── .gitignore                     # Ignore node_modules, .env
 ├── firebase.json                  # Firebase configuration
 ├── .firebaserc                    # Firebase project settings
-├── package.json                   # Dependencies and scripts
+├── package.json                   # Root-level package.json (for scripts, dev dependencies)
 ├── LICENSE.md                     # Proprietary license for API
 ├── README.md                      # Project overview
 └── .env                           # Environment variables
