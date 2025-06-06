@@ -1,0 +1,53 @@
+# .gitignore
+
+# Dependencies
+node_modules/
+functions/node_modules/
+npm-shrinkwrap.json
+
+# Environment Variables
+.env
+functions/.env
+
+# Firebase Configuration and Logs
+.firebase/
+.firebaserc
+firebase-debug.log
+functions/error.log
+functions/combined.log
+functions/firebase-debug.log
+functions/lib/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+combined.log
+error.log
+ui-debug.log
+
+# Testing
+coverage/
+tests/*.test.js
+
+# Production Build
+build/
+dist/
+
+# Scripts (if they contain sensitive information)
+/scripts/
+
+# Virtual Environments
+venv/
+
+# IDE/Editor-Specific Files
+.vscode/
+.idea/
+*.swp
+
+# OS/Temporary Files
+.DS_Store
+*.tmp
+
+# Sensitive Configuration Files
+src/config/*.json
